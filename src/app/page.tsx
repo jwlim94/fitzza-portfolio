@@ -262,10 +262,10 @@ export default function Home() {
     {
       id: "5",
       name: "Search",
-      gif: "/gifs/foo.gif",
+      gif: "/gifs/search.gif",
       content: (
         <Image
-          src="/gifs/foo.gif"
+          src="/gifs/search.gif"
           alt="Search GIF"
           width={0}
           height={0}
@@ -277,7 +277,7 @@ export default function Home() {
     {
       id: "6",
       name: "Favorite",
-      gif: "/gifs/foo.gif",
+      gif: "https://taskpro-website.vercel.app/_next/static/images/lighbulb-898dc38fcd4319fe9c2e9cf0fe42b5a0.gif",
       content: (
         <Image
           src="/gifs/foo.gif"
