@@ -202,120 +202,120 @@ export default function Home() {
     {
       id: "1",
       name: "Verify",
-      gif: "/gifs/verify.gif",
+      gif: "/gifs/foo.gif",
       content: (
         <Image
-          src="/gifs/verify.gif"
+          src="/gifs/foo.gif"
           alt="Verify GIF"
           width={0}
           height={0}
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized
+          unoptimized={true}
         />
       ),
     },
     {
       id: "2",
       name: "Register",
-      gif: "/gifs/register.gif",
+      gif: "/gifs/foo.gif",
       content: (
         <Image
-          src="/gifs/register.gif"
+          src="/gifs/foo.gif"
           alt="Register GIF"
           width={0}
           height={0}
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized
+          unoptimized={true}
         />
       ),
     },
     {
       id: "3",
       name: "Listings",
-      gif: "/gifs/listings.gif",
+      gif: "/gifs/foo.gif",
       content: (
         <Image
-          src="/gifs/listings.gif"
+          src="/gifs/foo.gif"
           alt="Listings GIF"
           width={0}
           height={0}
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized
+          unoptimized={true}
         />
       ),
     },
     {
       id: "4",
       name: "Neighbor",
-      gif: "/gifs/neighbor.gif",
+      gif: "/gifs/foo.gif",
       content: (
         <Image
-          src="/gifs/neighbor.gif"
+          src="/gifs/foo.gif"
           alt="Neighbor GIF"
           width={0}
           height={0}
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized
+          unoptimized={true}
         />
       ),
     },
     {
       id: "5",
       name: "Search",
-      gif: "/gifs/search.gif",
+      gif: "/gifs/foo.gif",
       content: (
         <Image
-          src="/gifs/search.gif"
+          src="/gifs/foo.gif"
           alt="Search GIF"
           width={0}
           height={0}
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized
+          unoptimized={true}
         />
       ),
     },
     {
       id: "6",
       name: "Favorite",
-      gif: "/gifs/favorite.gif",
+      gif: "/gifs/foo.gif",
       content: (
         <Image
-          src="/gifs/favorite.gif"
+          src="/gifs/foo.gif"
           alt="Favorite GIF"
           width={0}
           height={0}
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized
+          unoptimized={true}
         />
       ),
     },
     {
       id: "7",
       name: "Chat",
-      gif: "/gifs/chat.gif",
+      gif: "/gifs/foo.gif",
       content: (
         <Image
-          src="/gifs/chat.gif"
+          src="/gifs/foo.gif"
           alt="Chat GIF"
           width={0}
           height={0}
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized
+          unoptimized={true}
         />
       ),
     },
     {
       id: "8",
       name: "Profile",
-      gif: "/gifs/profile.gif",
+      gif: "/gifs/foo.gif",
       content: (
         <Image
-          src="/gifs/profile.gif"
+          src="/gifs/foo.gif"
           alt="Profile GIF"
           width={0}
           height={0}
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized
+          unoptimized={true}
         />
       ),
     },
@@ -330,7 +330,7 @@ export default function Home() {
           width={0}
           height={0}
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized
+          unoptimized={true}
         />
       ),
     },
@@ -451,15 +451,16 @@ export default function Home() {
         <div className="flex items-center justify-center w-1/2">
           {hoveredFeature ? (
             <Image
-              src={
-                features.find((feature) => feature.id === hoveredFeature)
-                  ?.gif || ""
-              }
+              // src={
+              //   features.find((feature) => feature.id === hoveredFeature)
+              //     ?.gif || ""
+              // }
+              src="/gifs/foo.gif"
               alt="Feature GIF"
               width={340}
               height={340}
               className="rounded-lg shadow-lg"
-              unoptimized
+              unoptimized={true}
             />
           ) : (
             <Image
