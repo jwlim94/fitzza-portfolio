@@ -322,6 +322,7 @@ export default function Home() {
           <div className="flex-grow" />
         )}
         <motion.div
+          key={currentIndex} // unique key to reset animation
           className="flex flex-grow items-center justify-center mb-12"
           drag
           dragConstraints={{
@@ -345,13 +346,15 @@ export default function Home() {
           <div className="flex-grow" />
         )}
       </div>
-      {currentIndex == 0 && (
+
+      {/* Swipe to Explore! */}
+      {currentIndex === 0 && (
         <div className="mt-8 absolute bottom-24 left-0 right-0 text-xl text-center">
           {text.map((el, i) => (
             <motion.span
               key={i}
-              initial={{ opacity: 0.3 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0.3, color: "#FF3D00" }}
+              animate={{ opacity: 1, color: "#0090FF" }}
               transition={{
                 duration: 1,
                 delay: i / 100,
@@ -362,6 +365,18 @@ export default function Home() {
               {el}
             </motion.span>
           ))}
+        </div>
+      )}
+
+      {/* Linear Progress Indicator Bar */}
+      {currentIndex !== 0 && (
+        <div className="w-full h-3 bg-gray-300">
+          <motion.div
+            className="h-full bg-[#0090FF]"
+            style={{ width: `${(currentIndex / 12) * 100}%` }}
+            initial={{ width: 0 }}
+            animate={{ width: `${(currentIndex / 12) * 100}%` }}
+          />
         </div>
       )}
     </div>
