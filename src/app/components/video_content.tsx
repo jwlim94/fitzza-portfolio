@@ -1,10 +1,12 @@
+import clsx from "clsx";
 import { motion } from "framer-motion";
 
 interface VideoContentProps {
   name: string;
+  isMobile: boolean;
 }
 
-export default function VideoContent({ name }: VideoContentProps) {
+export default function VideoContent({ name, isMobile }: VideoContentProps) {
   return (
     <motion.div
       initial={{ opacity: 0.2, scale: 0.95 }}
@@ -13,7 +15,9 @@ export default function VideoContent({ name }: VideoContentProps) {
     >
       <video
         src={`https://fitzza-portfolio.vercel.app/videos/${name}.mp4`}
-        className="rounded-3xl shadow-card h-[80vh] w-auto aspect-[332/720] object-cover"
+        className={clsx(
+          "rounded-3xl shadow-card w-auto aspect-[332/720] object-cover",
+          isMobile ? "h-[70vh]" : "h-[80vh]")}
         muted
         playsInline
         autoPlay

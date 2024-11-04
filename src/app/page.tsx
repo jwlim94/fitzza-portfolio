@@ -219,47 +219,47 @@ export default function Home() {
     {
       id: "1",
       name: "Verify",
-      content: <VideoContent name="verify" />,
+      content: <VideoContent name="verify" isMobile={isMobile} />,
     },
     {
       id: "2",
       name: "Register",
-      content: <VideoContent name="register" />,
+      content: <VideoContent name="register" isMobile={isMobile} />,
     },
     {
       id: "3",
       name: "Listings",
-      content: <VideoContent name="listings" />,
+      content: <VideoContent name="listings" isMobile={isMobile} />,
     },
     {
       id: "4",
       name: "Neighbor",
-      content: <VideoContent name="neighbor" />,
+      content: <VideoContent name="neighbor" isMobile={isMobile} />,
     },
     {
       id: "5",
       name: "Search",
-      content: <VideoContent name="search" />,
+      content: <VideoContent name="search" isMobile={isMobile} />,
     },
     {
       id: "6",
       name: "Favorite",
-      content: <VideoContent name="favorite" />,
+      content: <VideoContent name="favorite" isMobile={isMobile} />,
     },
     {
       id: "7",
       name: "Chat",
-      content: <VideoContent name="chat" />,
+      content: <VideoContent name="chat" isMobile={isMobile} />,
     },
     {
       id: "8",
       name: "Profile",
-      content: <VideoContent name="profile" />,
+      content: <VideoContent name="profile" isMobile={isMobile} />,
     },
     {
       id: "9",
       name: "Create",
-      content: <VideoContent name="create" />,
+      content: <VideoContent name="create" isMobile={isMobile} />,
     },
     {
       id: "10",
@@ -280,37 +280,37 @@ export default function Home() {
 
   return isMobile ? (
     <div className="flex flex-col w-screen h-screen">
-      <div className="flex justify-between items-center px-16 pt-6">
+      <div className="flex justify-center items-center px-16 pt-6">
+        <div className="text-xl">{features[currentIndex].name}</div>
+      </div>
+      <div className="flex h-screen items-center justify-center mb-12">
         {currentIndex !== 0 ? (
           <div
-            className="cursor-pointer text-xl p-6"
+            className="cursor-pointer flex-grow text-xl h-full"
             onClick={() => {
               if (currentIndex === 0) return;
               setcurrentIndex(currentIndex - 1);
             }}
           >
-            ◀︎
           </div>
         ) : (
-          <div className="p-6" />
+          <div className="flex-grow" />
         )}
-        <div className="text-xl">{features[currentIndex].name}</div>
+        <div className="flex h justify-center">
+          {features[currentIndex].content}
+        </div>
         {currentIndex !== features.length - 1 ? (
           <div
-            className="cursor-pointer text-xl p-6"
+            className="cursor-pointer flex-grow text-xl h-full"
             onClick={() => {
               if (currentIndex === features.length - 1) return;
               setcurrentIndex(currentIndex + 1);
             }}
           >
-            ▶︎
           </div>
         ) : (
-          <div className="p-6" />
+          <div className="flex-grow" />
         )}
-      </div>
-      <div className="flex flex-grow items-center justify-center mb-12">
-        {features[currentIndex].content}
       </div>
     </div>
   ) : (
