@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
-  const [hoveredFeature, setHoveredFeature] = useState<string | null>(null);
   const [isInstagramClicked, setIsInstagramClicked] = useState<boolean | null>(
     null
   );
@@ -14,16 +13,14 @@ export default function Home() {
   const [isLinkedinClicked, setIsLinkedinClicked] = useState<boolean | null>(
     true
   );
+  const [currentIndex, setcurrentIndex] = useState<number>(0);
   const isMobile = useMediaQuery("(max-width: 768px)");
 
-  const [currentIndex, setcurrentIndex] = useState<number | null>(0);
-
-  // Dummy feature data with placeholder images or text for the GIFs
   const features = [
     {
       id: "0",
       name: "About us",
-      content: (
+      content: isMobile ? (
         <div className="flex-grow flex flex-col items-center justify-center">
           <img
             src="/images/default.png"
@@ -189,6 +186,16 @@ export default function Home() {
               </div>
             </div>
           )}
+        </div>
+      ) : (
+        // this parent div prevents child image from flashing in size when loading
+        <div className="w-[200px] h-[200px] flex items-center justify-center">
+          <img
+            src="/images/default.png"
+            alt="Default"
+            width={200}
+            height={200}
+          />
         </div>
       ),
     },
@@ -376,7 +383,7 @@ export default function Home() {
             className="cursor-pointer text-xl p-6"
             onClick={() => {
               if (currentIndex === 0) return;
-              setcurrentIndex(currentIndex! - 1);
+              setcurrentIndex(currentIndex - 1);
             }}
           >
             ◀︎
@@ -384,13 +391,13 @@ export default function Home() {
         ) : (
           <div className="p-6" />
         )}
-        <div className="text-xl">{features[currentIndex!].name}</div>
+        <div className="text-xl">{features[currentIndex].name}</div>
         {currentIndex !== features.length - 1 ? (
           <div
             className="cursor-pointer text-xl p-6"
             onClick={() => {
               if (currentIndex === features.length - 1) return;
-              setcurrentIndex(currentIndex! + 1);
+              setcurrentIndex(currentIndex + 1);
             }}
           >
             ▶︎
@@ -400,7 +407,7 @@ export default function Home() {
         )}
       </div>
       <div className="flex flex-grow items-center justify-center mb-12">
-        {features[currentIndex!].content}
+        {features[currentIndex].content}
       </div>
     </div>
   ) : (
@@ -414,17 +421,11 @@ export default function Home() {
               <div
                 key={feature.id}
                 className="relative h-10 flex cursor-pointer items-center"
-                onMouseEnter={() => {
-                  setHoveredFeature(feature.id);
-                  setcurrentIndex(parseInt(feature.id));
-                }}
-                onMouseLeave={() => {
-                  setHoveredFeature(null);
-                  setcurrentIndex(null);
-                }}
+                onMouseEnter={() => setcurrentIndex(parseInt(feature.id))}
+                onMouseLeave={() => setcurrentIndex(0)}
               >
                 {/* Background circle on hover */}
-                {hoveredFeature === feature.id && (
+                {currentIndex === parseInt(feature.id) && (
                   <div className="absolute flex items-center -left-4">
                     <div className="w-32 h-10 bg-white rounded-full shadow-lg"></div>
                   </div>
@@ -432,7 +433,7 @@ export default function Home() {
                 <span
                   className={clsx(
                     "z-10",
-                    hoveredFeature === feature.id ? "text-black" : ""
+                    currentIndex === parseInt(feature.id) ? "text-black" : ""
                   )}
                 >
                   {feature.name}
@@ -443,19 +444,7 @@ export default function Home() {
 
         {/* Video Display Area */}
         <div className="flex items-center justify-center w-1/2 gap-y-2">
-          {hoveredFeature ? (
-            features[currentIndex!].content
-          ) : (
-            // this prevents from flashing loading size by giving constraint width and height same as the image
-            <div className="w-[200px] h-[200px] flex items-center justify-center">
-              <img
-                src="/images/default.png"
-                alt="Default"
-                width={200}
-                height={200}
-              />
-            </div>
-          )}
+          {features[currentIndex].content}
         </div>
 
         {/* Developer Section */}
