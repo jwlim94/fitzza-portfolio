@@ -18,8 +18,7 @@ export default function VideoContent({ name }: VideoContentProps) {
         playsInline
         autoPlay
         preload="auto"
-        // poster="https://fitzza-portfolio.vercel.app/images/loading.png"
-        poster="/images/loading.png"
+        poster="https://fitzza-portfolio.vercel.app/images/loading.png"
       />
     </motion.div>
   );
