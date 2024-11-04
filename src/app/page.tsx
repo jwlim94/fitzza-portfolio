@@ -296,6 +296,7 @@ export default function Home() {
   const swipeHandlers = useSwipeable({
     onSwipedLeft: handleSwipeLeft,
     onSwipedRight: handleSwipeRight,
+    trackMouse: true,
     trackTouch: true,
   });
 
