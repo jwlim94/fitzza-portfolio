@@ -322,10 +322,10 @@ export default function Home() {
     {
       id: "9",
       name: "Create",
-      gif: "/gifs/create.gif",
+      gif: "/gifs/foo.gif",
       content: (
         <Image
-          src="/gifs/create.gif"
+          src="/gifs/foo.gif"
           alt="Create GIF"
           width={0}
           height={0}
@@ -426,7 +426,6 @@ export default function Home() {
                 className="relative h-12 flex cursor-pointer items-center"
                 onMouseEnter={() => {
                   setHoveredFeature(feature.id);
-                  // handleMouseEnter();
                 }}
                 onMouseLeave={() => setHoveredFeature(null)}
               >
@@ -471,9 +470,6 @@ export default function Home() {
             />
           )}
         </div>
-
-        {/* GIF */}
-        <div></div>
 
         {/* Developer Section */}
         <div className="flex-col absolute right-0 bottom-0 space-y-4">
