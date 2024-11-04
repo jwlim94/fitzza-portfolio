@@ -305,9 +305,15 @@ export default function Home() {
       className="flex flex-col w-screen h-screen relative"
     >
       <div className="flex justify-center items-center px-16 pt-12 pb-4">
-        <div className="text-xl font-medium text-black">
+        <motion.div
+          key={currentIndex}
+          className="text-xl font-medium text-black"
+          initial={{ opacity: 0.5, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           {features[currentIndex].name}
-        </div>
+        </motion.div>
       </div>
       <div className="flex h-screen items-center justify-center mb-12">
         {currentIndex !== 0 ? (
