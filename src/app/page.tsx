@@ -247,10 +247,10 @@ export default function Home() {
     {
       id: "4",
       name: "Neighbor",
-      gif: "/gifs/foo.gif",
+      gif: "/gifs/neighbor.gif",
       content: (
         <Image
-          src="/gifs/foo.gif"
+          src="/gifs/neighbor.gif"
           alt="Neighbor GIF"
           width={0}
           height={0}
