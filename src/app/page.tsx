@@ -420,7 +420,7 @@ export default function Home() {
             .map((feature) => (
               <div
                 key={feature.id}
-                className="relative h-10 flex cursor-pointer items-center"
+                className="relative h-10 flex cursor-pointer items-center hover:scale-105"
                 onMouseEnter={() => setcurrentIndex(parseInt(feature.id))}
                 onMouseLeave={() => setcurrentIndex(0)}
               >
