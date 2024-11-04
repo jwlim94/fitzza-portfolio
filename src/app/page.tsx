@@ -27,7 +27,7 @@ export default function Home() {
       gif: "/gifs/test.gif",
       content: (
         <div className="flex-grow flex flex-col items-center justify-center">
-          <Image
+          <img
             src="/images/default.png"
             alt="Default"
             width={200}
@@ -50,7 +50,7 @@ export default function Home() {
                   setIsLinkedinClicked(false);
                 }}
               >
-                <Image
+                <img
                   src="/images/instagram-logo.png"
                   alt="Instagram logo"
                   width={32}
@@ -73,7 +73,7 @@ export default function Home() {
                   setIsLinkedinClicked(true);
                 }}
               >
-                <Image
+                <img
                   src="/images/linkedin-logo.png"
                   alt="LinkedIn logo"
                   width={32}
@@ -96,7 +96,7 @@ export default function Home() {
                   setIsLinkedinClicked(false);
                 }}
               >
-                <Image
+                <img
                   src="/images/github-logo.png"
                   alt="GitHub logo"
                   width={32}
@@ -115,13 +115,12 @@ export default function Home() {
                     href="https://www.instagram.com/fitzza.xyz/profilecard/"
                     target="_blank"
                   >
-                    <Image
+                    <img
                       className="rounded-full hover:scale-110"
                       src="/images/zino.png"
                       alt="zino"
                       width={32}
                       height={32}
-                      quality={100}
                     />
                   </Link>
                 </div>
@@ -137,13 +136,12 @@ export default function Home() {
                     href="https://www.linkedin.com/in/jwlim94/"
                     target="_blank"
                   >
-                    <Image
+                    <img
                       className="rounded-full"
                       src="/images/jongwoo-lim.jpg"
                       alt="Jongwoo Lim"
                       width={32}
                       height={32}
-                      quality={100}
                     />
                   </Link>
                 </div>
@@ -152,13 +150,12 @@ export default function Home() {
                     href="https://www.linkedin.com/in/sean-j-park/"
                     target="_blank"
                   >
-                    <Image
+                    <img
                       className="rounded-full hover:scale-110"
                       src="/images/sungjin-park.jpeg"
                       alt="Sungjin Park"
                       width={32}
                       height={32}
-                      quality={100}
                     />
                   </Link>
                 </div>
@@ -171,25 +168,23 @@ export default function Home() {
               <div className="flex bg-gray-200 h-12 mt-7 px-4 gap-x-4 rounded-full z-10">
                 <div className="self-center">
                   <Link href="https://www.github.com/jwlim94" target="_blank">
-                    <Image
+                    <img
                       className="rounded-full"
                       src="/images/jongwoo-lim.jpg"
                       alt="Jongwoo Lim"
                       width={32}
                       height={32}
-                      quality={100}
                     />
                   </Link>
                 </div>
                 <div className="self-center">
                   <Link href="https://www.github.com/sjpsean" target="_blank">
-                    <Image
+                    <img
                       className="rounded-full hover:scale-110"
                       src="/images/sungjin-park.jpeg"
                       alt="Sungjin Park"
                       width={32}
                       height={32}
-                      quality={100}
                     />
                   </Link>
                 </div>
@@ -339,7 +334,7 @@ export default function Home() {
       name: "🚧 Rewards",
       gif: "/images/not-ready.png",
       content: (
-        <Image
+        <img
           src="/images/not-ready.png"
           alt="Not Ready"
           width={200}
@@ -353,7 +348,7 @@ export default function Home() {
       name: "🚧 Admin",
       gif: "/images/not-ready.png",
       content: (
-        <Image
+        <img
           src="/images/not-ready.png"
           alt="Not Ready"
           width={200}
@@ -367,7 +362,7 @@ export default function Home() {
       name: "🚧 Analytics",
       gif: "/images/not-ready.png",
       content: (
-        <Image
+        <img
           src="/images/not-ready.png"
           alt="Not Ready"
           width={200}
@@ -456,7 +451,7 @@ export default function Home() {
           {hoveredFeature ? (
             features[currentIndex!].content
           ) : (
-            <Image
+            <img
               src="/images/default.png"
               alt="Default"
               width={200}
@@ -469,7 +464,7 @@ export default function Home() {
         <div className="flex-col absolute right-0 bottom-0 space-y-4">
           {/* Instagram */}
           <div className="relative group">
-            <Image
+            <img
               className="cursor-pointer z-20 relative hover:scale-110"
               src="/images/instagram-logo.png"
               alt="Instagram logo"
@@ -482,13 +477,12 @@ export default function Home() {
                   href="https://www.instagram.com/fitzza.xyz/profilecard/"
                   target="_blank"
                 >
-                  <Image
+                  <img
                     className="rounded-full hover:scale-110"
                     src="/images/zino.png"
                     alt="zino"
                     width={32}
                     height={32}
-                    quality={100}
                   />
                 </Link>
               </div>
@@ -497,7 +491,7 @@ export default function Home() {
           </div>
           {/* GitHub */}
           <div className="relative group">
-            <Image
+            <img
               className="cursor-pointer z-20 relative hover:scale-110"
               src="/images/github-logo.png"
               alt="GitHub logo"
@@ -507,25 +501,23 @@ export default function Home() {
             <div className="justify-around absolute -right-2 -bottom-2 w-40 h-12 bg-gray-100 rounded-lg z-10 hidden group-hover:flex">
               <div className="self-center ml-2">
                 <Link href="https://www.github.com/sjpsean" target="_blank">
-                  <Image
+                  <img
                     className="rounded-full hover:scale-110"
                     src="/images/sungjin-park.jpeg"
                     alt="Sungjin Park"
                     width={32}
                     height={32}
-                    quality={100}
                   />
                 </Link>
               </div>
               <div className="self-center ml-2">
                 <Link href="https://www.github.com/jwlim94" target="_blank">
-                  <Image
+                  <img
                     className="rounded-full hover:scale-110"
                     src="/images/jongwoo-lim.jpg"
                     alt="Jongwoo Lim"
                     width={32}
                     height={32}
-                    quality={100}
                   />
                 </Link>
               </div>
@@ -534,7 +526,7 @@ export default function Home() {
           </div>
           {/* LinkedIn */}
           <div className="relative group">
-            <Image
+            <img
               className="cursor-pointer relative z-20 hover:scale-110 rounded-lg overflow-hidden"
               src="/images/linkedin-logo.png"
               alt="LinkedIn logo"
@@ -548,13 +540,12 @@ export default function Home() {
                   href="https://www.linkedin.com/in/sean-j-park/"
                   target="_blank"
                 >
-                  <Image
+                  <img
                     className="rounded-full hover:scale-110"
                     src="/images/sungjin-park.jpeg"
                     alt="Sungjin Park"
                     width={32}
                     height={32}
-                    quality={100}
                   />
                 </Link>
               </div>
@@ -563,13 +554,12 @@ export default function Home() {
                   href="https://www.linkedin.com/in/jwlim94/"
                   target="_blank"
                 >
-                  <Image
+                  <img
                     className="rounded-full hover:scale-110"
                     src="/images/jongwoo-lim.jpg"
                     alt="Jongwoo Lim"
                     width={32}
                     height={32}
-                    quality={100}
                   />
                 </Link>
               </div>
