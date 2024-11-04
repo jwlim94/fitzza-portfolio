@@ -202,10 +202,10 @@ export default function Home() {
     {
       id: "1",
       name: "Verify",
-      gif: "https://fitzza-portfolio.vercel.app/gifs/verift.gif",
+      gif: "https://fitzza-portfolio.vercel.app/gifs/verify.gif",
       content: (
         <Image
-          src="https://fitzza-portfolio.vercel.app/gifs/verift.gif"
+          src="https://fitzza-portfolio.vercel.app/gifs/verify.gif"
           alt="Verify GIF"
           width={0}
           height={0}
