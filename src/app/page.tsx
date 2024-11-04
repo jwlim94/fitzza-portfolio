@@ -307,10 +307,17 @@ export default function Home() {
         //   className="rounded-lg shadow-lg h-[80vh] w-auto"
         //   unoptimized={true}
         // />
-        <img
-          src="https://fitzza-portfolio.vercel.app/gifs/favorite.gif"
-          alt="Verify GIF"
+        // <img
+        //   src="https://fitzza-portfolio.vercel.app/gifs/favorite.gif"
+        //   alt="Verify GIF"
+        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
+        // />
+        <video
+          src="https://fitzza-portfolio.vercel.app/videos/favorite.mp4"
           className="rounded-lg shadow-lg h-[80vh] w-auto"
+          muted
+          playsInline
+          autoPlay
         />
       ),
     },
@@ -373,7 +380,6 @@ export default function Home() {
         // />
         <video
           src="https://fitzza-portfolio.vercel.app/videos/create.mp4"
-          // src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
           className="rounded-lg shadow-lg h-[80vh] w-auto"
           muted
           playsInline
