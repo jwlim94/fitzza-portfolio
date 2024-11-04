@@ -316,7 +316,7 @@ export default function Home() {
           {features[currentIndex].name}
         </motion.div>
       </div>
-      <div className="flex h-screen items-center justify-center mb-[12vh]">
+      <div className="flex h-full items-center justify-center mb-[12vh]">
         {currentIndex !== 0 ? (
           <div
             className="cursor-pointer flex-grow text-xl h-full"
