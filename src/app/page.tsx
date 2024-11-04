@@ -303,9 +303,9 @@ export default function Home() {
   return isMobile ? (
     <div
       {...swipeHandlers}
-      className="flex flex-col w-screen h-screen relative"
+      className="flex flex-col w-[100vw] h-[100vh] relative"
     >
-      <div className="flex justify-center items-center px-16 pt-12 pb-4">
+      <div className="flex justify-center items-center h-[16vh]">
         <motion.div
           key={currentIndex}
           className="text-xl font-medium text-black"
@@ -316,7 +316,7 @@ export default function Home() {
           {features[currentIndex].name}
         </motion.div>
       </div>
-      <div className="flex h-screen items-center justify-center mb-12">
+      <div className="flex h-screen items-center justify-center mb-[12vh]">
         {currentIndex !== 0 ? (
           <div
             className="cursor-pointer flex-grow text-xl h-full"
@@ -330,7 +330,7 @@ export default function Home() {
         )}
         <motion.div
           key={currentIndex} // unique key to reset animation
-          className="flex flex-grow items-center justify-center mb-12"
+          className="flex flex-grow items-center justify-center"
           drag
           dragConstraints={{
             top: 0,
@@ -356,7 +356,7 @@ export default function Home() {
 
       {/* Swipe to Explore! */}
       {currentIndex === 0 && (
-        <div className="mt-8 absolute bottom-24 left-0 right-0 text-xl text-center">
+        <div className="absolute bottom-[8vh] left-0 right-0 text-xl text-center">
           {text.map((el, i) => (
             <motion.span
               key={i}
