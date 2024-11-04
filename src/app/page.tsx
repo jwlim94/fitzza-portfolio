@@ -23,7 +23,6 @@ export default function Home() {
     {
       id: "0",
       name: "About us",
-      gif: "/gifs/test.gif",
       content: (
         <div className="flex-grow flex flex-col items-center justify-center">
           <img
@@ -331,7 +330,6 @@ export default function Home() {
     {
       id: "10",
       name: "🚧 Rewards",
-      gif: "/images/not-ready.png",
       content: (
         <img
           src="/images/not-ready.png"
@@ -345,7 +343,6 @@ export default function Home() {
     {
       id: "11",
       name: "🚧 Admin",
-      gif: "/images/not-ready.png",
       content: (
         <img
           src="/images/not-ready.png"
@@ -359,7 +356,6 @@ export default function Home() {
     {
       id: "12",
       name: "🚧 Analytics",
-      gif: "/images/not-ready.png",
       content: (
         <img
           src="/images/not-ready.png"
@@ -445,17 +441,20 @@ export default function Home() {
             ))}
         </div>
 
-        {/* GIF Display Area */}
+        {/* Video Display Area */}
         <div className="flex items-center justify-center w-1/2 gap-y-2">
           {hoveredFeature ? (
             features[currentIndex!].content
           ) : (
-            <img
-              src="/images/default.png"
-              alt="Default"
-              width={200}
-              height={200}
-            />
+            // this prevents from flashing loading size by giving constraint width and height same as the image
+            <div className="w-[200px] h-[200px] flex items-center justify-center">
+              <img
+                src="/images/default.png"
+                alt="Default"
+                width={200}
+                height={200}
+              />
+            </div>
           )}
         </div>
 
