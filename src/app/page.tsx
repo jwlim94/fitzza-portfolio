@@ -7,6 +7,7 @@ import { useState } from "react";
 import { AnimatePresence, motion, useMotionValue } from "framer-motion";
 import VideoContent from "./components/video_content";
 import NotReadyContent from "./components/not_ready_conetent";
+import { useSwipeable } from "react-swipeable";
 
 export default function Home() {
   const [isInstagramClicked, setIsInstagramClicked] = useState<boolean>(false);
@@ -15,11 +16,12 @@ export default function Home() {
   const [isInstagramHovered, setIsInstagramHovered] = useState<boolean>(false);
   const [isGithubHovered, setIsGithubHovered] = useState<boolean>(false);
   const [isLinkedinHovered, setIsLinkedinHovered] = useState<boolean>(false);
-  const [currentIndex, setcurrentIndex] = useState<number>(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
+  const text = "Swipe to explore!".split("");
 
   const features = [
     {
@@ -278,10 +280,34 @@ export default function Home() {
     },
   ];
 
+  // Swipe handlers for mobile navigation
+  const handleSwipeLeft = () => {
+    if (currentIndex < features.length - 1) {
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    }
+  };
+
+  const handleSwipeRight = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prevIndex) => prevIndex - 1);
+    }
+  };
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: handleSwipeLeft,
+    onSwipedRight: handleSwipeRight,
+    trackTouch: true,
+  });
+
   return isMobile ? (
-    <div className="flex flex-col w-screen h-screen">
-      <div className="flex justify-center items-center px-16 pt-6">
-        <div className="text-xl">{features[currentIndex].name}</div>
+    <div
+      {...swipeHandlers}
+      className="flex flex-col w-screen h-screen relative"
+    >
+      <div className="flex justify-center items-center px-16 pt-12 pb-4">
+        <div className="text-xl font-medium text-black">
+          {features[currentIndex].name}
+        </div>
       </div>
       <div className="flex h-screen items-center justify-center mb-12">
         {currentIndex !== 0 ? (
@@ -289,29 +315,55 @@ export default function Home() {
             className="cursor-pointer flex-grow text-xl h-full"
             onClick={() => {
               if (currentIndex === 0) return;
-              setcurrentIndex(currentIndex - 1);
+              setCurrentIndex(currentIndex - 1);
             }}
-          >
-          </div>
+          ></div>
         ) : (
           <div className="flex-grow" />
         )}
-        <div className="flex h justify-center">
+        <motion.div
+          className="flex flex-grow items-center justify-center mb-12"
+          drag
+          dragConstraints={{
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+          }}
+        >
           {features[currentIndex].content}
-        </div>
+        </motion.div>
         {currentIndex !== features.length - 1 ? (
           <div
             className="cursor-pointer flex-grow text-xl h-full"
             onClick={() => {
               if (currentIndex === features.length - 1) return;
-              setcurrentIndex(currentIndex + 1);
+              setCurrentIndex(currentIndex + 1);
             }}
-          >
-          </div>
+          ></div>
         ) : (
           <div className="flex-grow" />
         )}
       </div>
+      {currentIndex == 0 && (
+        <div className="mt-8 absolute bottom-24 left-0 right-0 text-xl text-center">
+          {text.map((el, i) => (
+            <motion.span
+              key={i}
+              initial={{ opacity: 0.3 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 1,
+                delay: i / 100,
+                repeat: Infinity,
+                repeatDelay: 0.2,
+              }}
+            >
+              {el}
+            </motion.span>
+          ))}
+        </div>
+      )}
     </div>
   ) : (
     <div className="flex min-h-screen p-10">
@@ -324,8 +376,8 @@ export default function Home() {
               <motion.div
                 key={feature.id}
                 className="relative h-10 flex cursor-pointer items-center hover:scale-105"
-                onMouseEnter={() => setcurrentIndex(parseInt(feature.id))}
-                onMouseLeave={() => setcurrentIndex(0)}
+                onMouseEnter={() => setCurrentIndex(parseInt(feature.id))}
+                onMouseLeave={() => setCurrentIndex(0)}
                 onMouseMove={(e) => {
                   // Update x and y based on mouse position relative to the element
                   x.set(
