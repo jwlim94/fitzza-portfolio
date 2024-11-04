@@ -3,7 +3,7 @@
 import useMediaQuery from "@/hooks/useMediaQuery";
 import clsx from "clsx";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useMotionValue } from "framer-motion";
 import VideoContent from "./components/video_content";
 import NotReadyContent from "./components/not_ready_conetent";
@@ -18,6 +18,21 @@ export default function Home() {
   const [isLinkedinHovered, setIsLinkedinHovered] = useState<boolean>(false);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const isMobile = useMediaQuery("(max-width: 768px)");
+
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    const updateViewportHeight = () => {
+      setViewportHeight(window.innerHeight); // Update the state with the new inner height
+    };
+
+    // Set initial viewport height and update it on resize
+    updateViewportHeight();
+    window.addEventListener("resize", updateViewportHeight);
+
+    // Clean up the event listener on component unmount
+    return () => window.removeEventListener("resize", updateViewportHeight);
+  }, []);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -303,7 +318,7 @@ export default function Home() {
   return isMobile ? (
     <div
       {...swipeHandlers}
-      className="flex flex-col w-[100vw] h-[100vh] overflow-hidden relative"
+      className="flex flex-col w-[100vw] overflow-hidden relative" style={{ height: `${viewportHeight}px` }}
     >
       <div className="flex justify-center items-center h-[16vh]">
         <motion.div
