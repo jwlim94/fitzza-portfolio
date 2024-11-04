@@ -303,7 +303,7 @@ export default function Home() {
   return isMobile ? (
     <div
       {...swipeHandlers}
-      className="flex flex-col w-[100vw] h-[100vh] relative"
+      className="flex flex-col w-[100vw] h-[100vh] overflow-hidden relative"
     >
       <div className="flex justify-center items-center h-[16vh]">
         <motion.div
