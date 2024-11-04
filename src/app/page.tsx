@@ -280,7 +280,7 @@ export default function Home() {
       gif: "https://taskpro-website.vercel.app/_next/static/images/lighbulb-898dc38fcd4319fe9c2e9cf0fe42b5a0.gif",
       content: (
         <Image
-          src="/gifs/foo.gif"
+          src="https://taskpro-website.vercel.app/_next/static/images/lighbulb-898dc38fcd4319fe9c2e9cf0fe42b5a0.gif"
           alt="Favorite GIF"
           width={0}
           height={0}
