@@ -202,135 +202,171 @@ export default function Home() {
     {
       id: "1",
       name: "Verify",
-      gif: "https://fitzza-portfolio.vercel.app/gifs/verify.gif",
       content: (
-        <Image
+        // <Image
+        //   src="https://fitzza-portfolio.vercel.app/gifs/verify.gif"
+        //   alt="Verify GIF"
+        //   width={0}
+        //   height={0}
+        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
+        //   unoptimized={true}
+        // />
+        <img
           src="https://fitzza-portfolio.vercel.app/gifs/verify.gif"
           alt="Verify GIF"
-          width={0}
-          height={0}
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized={true}
         />
       ),
     },
     {
       id: "2",
       name: "Register",
-      gif: "https://fitzza-portfolio.vercel.app/gifs/register.gif",
       content: (
-        <Image
+        // <Image
+        //   src="https://fitzza-portfolio.vercel.app/gifs/register.gif"
+        //   alt="Register GIF"
+        //   width={0}
+        //   height={0}
+        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
+        //   unoptimized={true}
+        // />
+        <img
           src="https://fitzza-portfolio.vercel.app/gifs/register.gif"
-          alt="Register GIF"
-          width={0}
-          height={0}
+          alt="Verify GIF"
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized={true}
         />
       ),
     },
     {
       id: "3",
       name: "Listings",
-      gif: "https://fitzza-portfolio.vercel.app/gifs/listings.gif",
       content: (
-        <Image
+        // <Image
+        //   src="https://fitzza-portfolio.vercel.app/gifs/listings.gif"
+        //   alt="Listings GIF"
+        //   width={0}
+        //   height={0}
+        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
+        //   unoptimized={true}
+        // />
+        <img
           src="https://fitzza-portfolio.vercel.app/gifs/listings.gif"
-          alt="Listings GIF"
-          width={0}
-          height={0}
+          alt="Verify GIF"
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized={true}
         />
       ),
     },
     {
       id: "4",
       name: "Neighbor",
-      gif: "https://fitzza-portfolio.vercel.app/gifs/neighbor.gif",
       content: (
-        <Image
+        // <Image
+        //   src="https://fitzza-portfolio.vercel.app/gifs/neighbor.gif"
+        //   alt="Neighbor GIF"
+        //   width={0}
+        //   height={0}
+        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
+        //   unoptimized={true}
+        // />
+        <img
           src="https://fitzza-portfolio.vercel.app/gifs/neighbor.gif"
-          alt="Neighbor GIF"
-          width={0}
-          height={0}
+          alt="Verify GIF"
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized={true}
         />
       ),
     },
     {
       id: "5",
       name: "Search",
-      gif: "https://fitzza-portfolio.vercel.app/gifs/search.gif",
       content: (
-        <Image
+        // <Image
+        //   src="https://fitzza-portfolio.vercel.app/gifs/search.gif"
+        //   alt="Search GIF"
+        //   width={0}
+        //   height={0}
+        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
+        //   unoptimized={true}
+        // />
+        <img
           src="https://fitzza-portfolio.vercel.app/gifs/search.gif"
-          alt="Search GIF"
-          width={0}
-          height={0}
+          alt="Verify GIF"
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized={true}
         />
       ),
     },
     {
       id: "6",
       name: "Favorite",
-      gif: "https://fitzza-portfolio.vercel.app/gifs/favorite.gif",
       content: (
-        <Image
+        // <Image
+        //   src="https://fitzza-portfolio.vercel.app/gifs/favorite.gif"
+        //   alt="Search GIF"
+        //   width={0}
+        //   height={0}
+        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
+        //   unoptimized={true}
+        // />
+        <img
           src="https://fitzza-portfolio.vercel.app/gifs/favorite.gif"
-          alt="Search GIF"
-          width={0}
-          height={0}
+          alt="Verify GIF"
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized={true}
         />
       ),
     },
     {
       id: "7",
       name: "Chat",
-      gif: "https://fitzza-portfolio.vercel.app/gifs/chat.gif",
       content: (
-        <Image
+        // <Image
+        //   src="https://fitzza-portfolio.vercel.app/gifs/chat.gif"
+        //   alt="Chat GIF"
+        //   width={0}
+        //   height={0}
+        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
+        //   unoptimized={true}
+        // />
+        <img
           src="https://fitzza-portfolio.vercel.app/gifs/chat.gif"
-          alt="Chat GIF"
-          width={0}
-          height={0}
+          alt="Verify GIF"
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized={true}
         />
       ),
     },
     {
       id: "8",
       name: "Profile",
-      gif: "https://fitzza-portfolio.vercel.app/gifs/profile.gif",
       content: (
-        <Image
+        // <Image
+        //   src="https://fitzza-portfolio.vercel.app/gifs/profile.gif"
+        //   alt="Profile GIF"
+        //   width={0}
+        //   height={0}
+        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
+        //   unoptimized={true}
+        // />
+        <img
           src="https://fitzza-portfolio.vercel.app/gifs/profile.gif"
-          alt="Profile GIF"
-          width={0}
-          height={0}
+          alt="Verify GIF"
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized={true}
         />
       ),
     },
     {
       id: "9",
       name: "Create",
-      gif: "https://fitzza-portfolio.vercel.app/gifs/create.gif",
       content: (
-        <Image
+        // <Image
+        //   src="https://fitzza-portfolio.vercel.app/gifs/create.gif"
+        //   alt="Create GIF"
+        //   width={0}
+        //   height={0}
+        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
+        //   unoptimized={true}
+        // />
+        <img
           src="https://fitzza-portfolio.vercel.app/gifs/create.gif"
-          alt="Create GIF"
-          width={0}
-          height={0}
+          alt="Verify GIF"
           className="rounded-lg shadow-lg h-[80vh] w-auto"
-          unoptimized={true}
         />
       ),
     },
