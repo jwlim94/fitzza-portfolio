@@ -305,7 +305,7 @@ export default function Home() {
       {...swipeHandlers}
       className="flex flex-col w-[100vw] h-[100dvh] overflow-hidden relative"
     >
-      <div className="flex justify-center items-center h-[16vh]">
+      <div className="flex justify-center items-center h-[16dvh]">
         <motion.div
           key={currentIndex}
           className="text-xl font-medium text-black"
@@ -316,7 +316,7 @@ export default function Home() {
           {features[currentIndex].name}
         </motion.div>
       </div>
-      <div className="flex h-full items-center justify-center mb-[12vh]">
+      <div className="flex h-full items-start justify-center">
         {currentIndex !== 0 ? (
           <div
             className="cursor-pointer flex-grow text-xl h-full"
@@ -356,7 +356,7 @@ export default function Home() {
 
       {/* Swipe to Explore! */}
       {currentIndex === 0 && (
-        <div className="absolute bottom-[8vh] left-0 right-0 text-xl text-center">
+        <div className="absolute bottom-[8dvh] left-0 right-0 text-xl text-center">
           {text.map((el, i) => (
             <motion.span
               key={i}
@@ -377,7 +377,7 @@ export default function Home() {
 
       {/* Linear Progress Indicator Bar */}
       {currentIndex !== 0 && (
-        <div className="w-full h-3 bg-gray-300">
+        <div className="w-full h-4 bg-gray-300">
           <motion.div
             className="h-full bg-[#0090FF]"
             style={{ width: `${(currentIndex / 12) * 100}%` }}
