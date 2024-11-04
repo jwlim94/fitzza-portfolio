@@ -4,17 +4,22 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import clsx from "clsx";
 import Link from "next/link";
 import { useState } from "react";
+import { AnimatePresence, motion, useMotionValue } from "framer-motion";
+import VideoContent from "./components/video_content";
+import NotReadyContent from "./components/not_ready_conetent";
 
 export default function Home() {
-  const [isInstagramClicked, setIsInstagramClicked] = useState<boolean | null>(
-    null
-  );
-  const [isGithubClicked, setIsGithubClicked] = useState<boolean | null>(null);
-  const [isLinkedinClicked, setIsLinkedinClicked] = useState<boolean | null>(
-    true
-  );
+  const [isInstagramClicked, setIsInstagramClicked] = useState<boolean>(false);
+  const [isGithubClicked, setIsGithubClicked] = useState<boolean>(false);
+  const [isLinkedinClicked, setIsLinkedinClicked] = useState<boolean>(true);
+  const [isInstagramHovered, setIsInstagramHovered] = useState<boolean>(false);
+  const [isGithubHovered, setIsGithubHovered] = useState<boolean>(false);
+  const [isLinkedinHovered, setIsLinkedinHovered] = useState<boolean>(false);
   const [currentIndex, setcurrentIndex] = useState<number>(0);
   const isMobile = useMediaQuery("(max-width: 768px)");
+
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
 
   const features = [
     {
@@ -104,7 +109,11 @@ export default function Home() {
           {/* developers images and url */}
           {isInstagramClicked && (
             <div>
-              <div className="flex bg-gray-200 h-12 mt-7 px-2 rounded-full z-10">
+              <motion.div
+                className="flex bg-gray-200 h-12 mt-7 px-2 rounded-full z-10"
+                initial={{ opacity: 0.2, scale: 0.6 }}
+                animate={{ opacity: 1, scale: 1 }}
+              >
                 <div className="self-center">
                   <Link
                     href="https://www.instagram.com/fitzza.xyz/profilecard/"
@@ -119,13 +128,17 @@ export default function Home() {
                     />
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             </div>
           )}
 
           {isLinkedinClicked && (
             <div>
-              <div className="flex bg-gray-200 h-12 mt-7 px-4 gap-x-4 rounded-full z-10">
+              <motion.div
+                className="flex bg-gray-200 h-12 mt-7 px-4 gap-x-4 rounded-full z-10"
+                initial={{ opacity: 0.2, scale: 0.6 }}
+                animate={{ opacity: 1, scale: 1 }}
+              >
                 <div className="self-center">
                   <Link
                     href="https://www.linkedin.com/in/jwlim94/"
@@ -154,13 +167,17 @@ export default function Home() {
                     />
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             </div>
           )}
 
           {isGithubClicked && (
             <div>
-              <div className="flex bg-gray-200 h-12 mt-7 px-4 gap-x-4 rounded-full z-10">
+              <motion.div
+                className="flex bg-gray-200 h-12 mt-7 px-4 gap-x-4 rounded-full z-10"
+                initial={{ opacity: 0.2, scale: 0.6 }}
+                animate={{ opacity: 1, scale: 1 }}
+              >
                 <div className="self-center">
                   <Link href="https://www.github.com/jwlim94" target="_blank">
                     <img
@@ -183,7 +200,7 @@ export default function Home() {
                     />
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             </div>
           )}
         </div>
@@ -202,176 +219,62 @@ export default function Home() {
     {
       id: "1",
       name: "Verify",
-      content: (
-        <video
-          src="https://fitzza-portfolio.vercel.app/videos/verify.mp4"
-          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
-          muted
-          playsInline
-          autoPlay
-          preload="auto"
-          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
-        />
-      ),
+      content: <VideoContent name="verify" />,
     },
     {
       id: "2",
       name: "Register",
-      content: (
-        <video
-          src="https://fitzza-portfolio.vercel.app/videos/register.mp4"
-          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
-          muted
-          playsInline
-          autoPlay
-          preload="auto"
-          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
-        />
-      ),
+      content: <VideoContent name="register" />,
     },
     {
       id: "3",
       name: "Listings",
-      content: (
-        <video
-          src="https://fitzza-portfolio.vercel.app/videos/listings.mp4"
-          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
-          muted
-          playsInline
-          autoPlay
-          preload="auto"
-          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
-        />
-      ),
+      content: <VideoContent name="listings" />,
     },
     {
       id: "4",
       name: "Neighbor",
-      content: (
-        <video
-          src="https://fitzza-portfolio.vercel.app/videos/neighbor.mp4"
-          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
-          muted
-          playsInline
-          autoPlay
-          preload="auto"
-          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
-        />
-      ),
+      content: <VideoContent name="neighbor" />,
     },
     {
       id: "5",
       name: "Search",
-      content: (
-        <video
-          src="https://fitzza-portfolio.vercel.app/videos/search.mp4"
-          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
-          muted
-          playsInline
-          autoPlay
-          preload="auto"
-          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
-        />
-      ),
+      content: <VideoContent name="search" />,
     },
     {
       id: "6",
       name: "Favorite",
-      content: (
-        <video
-          src="https://fitzza-portfolio.vercel.app/videos/favorite.mp4"
-          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
-          muted
-          playsInline
-          autoPlay
-          preload="auto"
-          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
-        />
-      ),
+      content: <VideoContent name="favorite" />,
     },
     {
       id: "7",
       name: "Chat",
-      content: (
-        <video
-          src="https://fitzza-portfolio.vercel.app/videos/chat.mp4"
-          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
-          muted
-          playsInline
-          autoPlay
-          preload="auto"
-          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
-        />
-      ),
+      content: <VideoContent name="chat" />,
     },
     {
       id: "8",
       name: "Profile",
-      content: (
-        <video
-          src="https://fitzza-portfolio.vercel.app/videos/profile.mp4"
-          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
-          muted
-          playsInline
-          autoPlay
-          preload="auto"
-          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
-        />
-      ),
+      content: <VideoContent name="profile" />,
     },
     {
       id: "9",
       name: "Create",
-      content: (
-        <video
-          src="https://fitzza-portfolio.vercel.app/videos/create.mp4"
-          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
-          muted
-          playsInline
-          autoPlay
-          preload="auto"
-          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
-        />
-      ),
+      content: <VideoContent name="create" />,
     },
     {
       id: "10",
       name: "🚧 Rewards",
-      content: (
-        <img
-          src="/images/not-ready.png"
-          alt="Not Ready"
-          width={200}
-          height={200}
-          className="rounded-lg h-[30vh] w-auto"
-        />
-      ),
+      content: <NotReadyContent />,
     },
     {
       id: "11",
       name: "🚧 Admin",
-      content: (
-        <img
-          src="/images/not-ready.png"
-          alt="Not Ready"
-          width={200}
-          height={200}
-          className="rounded-lg h-[30vh] w-auto"
-        />
-      ),
+      content: <NotReadyContent />,
     },
     {
       id: "12",
       name: "🚧 Analytics",
-      content: (
-        <img
-          src="/images/not-ready.png"
-          alt="Not Ready"
-          width={200}
-          height={200}
-          className="rounded-lg h-[30vh] w-auto"
-        />
-      ),
+      content: <NotReadyContent />,
     },
   ];
 
@@ -418,11 +321,24 @@ export default function Home() {
           {features
             .filter((feature) => feature.id !== "0")
             .map((feature) => (
-              <div
+              <motion.div
                 key={feature.id}
                 className="relative h-10 flex cursor-pointer items-center hover:scale-105"
                 onMouseEnter={() => setcurrentIndex(parseInt(feature.id))}
                 onMouseLeave={() => setcurrentIndex(0)}
+                onMouseMove={(e) => {
+                  // Update x and y based on mouse position relative to the element
+                  x.set(
+                    e.clientX - e.currentTarget.getBoundingClientRect().left
+                  );
+                  y.set(
+                    e.clientY - e.currentTarget.getBoundingClientRect().top
+                  );
+                }}
+                onHoverEnd={() => {
+                  x.set(0);
+                  y.set(0);
+                }}
               >
                 {/* Background circle on hover */}
                 {currentIndex === parseInt(feature.id) && (
@@ -433,24 +349,36 @@ export default function Home() {
                 <span
                   className={clsx(
                     "z-10",
-                    currentIndex === parseInt(feature.id) ? "text-black" : ""
+                    currentIndex === parseInt(feature.id)
+                      ? "text-black font-semibold"
+                      : ""
                   )}
                 >
                   {feature.name}
                 </span>
-              </div>
+              </motion.div>
             ))}
         </div>
 
         {/* Video Display Area */}
-        <div className="flex items-center justify-center w-1/2 gap-y-2">
+        <motion.div
+          className="flex items-center justify-center w-1/2 gap-y-2"
+          initial={{ opacity: 0.2, scale: 0.6 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          style={{ x, y }}
+        >
           {features[currentIndex].content}
-        </div>
+        </motion.div>
 
         {/* Developer Section */}
         <div className="flex-col absolute right-0 bottom-0 space-y-4">
           {/* Instagram */}
-          <div className="relative group">
+          <div
+            className="relative group"
+            onMouseEnter={() => setIsInstagramHovered(true)}
+            onMouseLeave={() => setIsInstagramHovered(false)}
+          >
             <img
               className="cursor-pointer z-20 relative hover:scale-110"
               src="/images/instagram-logo.png"
@@ -458,26 +386,41 @@ export default function Home() {
               width={32}
               height={32}
             />
-            <div className="justify-around absolute -right-2 -bottom-2 w-28 h-12 bg-gray-100 rounded-lg z-10 hidden group-hover:flex">
-              <div className="self-center ml-2">
-                <Link
-                  href="https://www.instagram.com/fitzza.xyz/profilecard/"
-                  target="_blank"
+            {/* AnimatePresence Wrapper for Exit Animation */}
+            <AnimatePresence>
+              {isInstagramHovered && (
+                <motion.div
+                  className="justify-around absolute -right-2 -bottom-2 w-28 h-12 bg-gray-100 rounded-lg z-10 flex"
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 10 }}
+                  transition={{ duration: 0.2 }}
                 >
-                  <img
-                    className="rounded-full hover:scale-110"
-                    src="/images/zino.png"
-                    alt="zino"
-                    width={32}
-                    height={32}
-                  />
-                </Link>
-              </div>
-              <div className="w-12" />
-            </div>
+                  <div className="self-center ml-2">
+                    <Link
+                      href="https://www.instagram.com/fitzza.xyz/profilecard/"
+                      target="_blank"
+                    >
+                      <img
+                        className="rounded-full hover:scale-110"
+                        src="/images/zino.png"
+                        alt="zino"
+                        width={32}
+                        height={32}
+                      />
+                    </Link>
+                  </div>
+                  <div className="w-12" />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
           {/* GitHub */}
-          <div className="relative group">
+          <div
+            className="relative group"
+            onMouseEnter={() => setIsGithubHovered(true)}
+            onMouseLeave={() => setIsGithubHovered(false)}
+          >
             <img
               className="cursor-pointer z-20 relative hover:scale-110"
               src="/images/github-logo.png"
@@ -485,34 +428,49 @@ export default function Home() {
               width={32}
               height={32}
             />
-            <div className="justify-around absolute -right-2 -bottom-2 w-40 h-12 bg-gray-100 rounded-lg z-10 hidden group-hover:flex">
-              <div className="self-center ml-2">
-                <Link href="https://www.github.com/sjpsean" target="_blank">
-                  <img
-                    className="rounded-full hover:scale-110"
-                    src="/images/sungjin-park.jpeg"
-                    alt="Sungjin Park"
-                    width={32}
-                    height={32}
-                  />
-                </Link>
-              </div>
-              <div className="self-center ml-2">
-                <Link href="https://www.github.com/jwlim94" target="_blank">
-                  <img
-                    className="rounded-full hover:scale-110"
-                    src="/images/jongwoo-lim.jpg"
-                    alt="Jongwoo Lim"
-                    width={32}
-                    height={32}
-                  />
-                </Link>
-              </div>
-              <div className="w-12" />
-            </div>
+            {/* AnimatePresence Wrapper for Exit Animation */}
+            <AnimatePresence>
+              {isGithubHovered && (
+                <motion.div
+                  className="justify-around absolute -right-2 -bottom-2 w-40 h-12 bg-gray-100 rounded-lg z-10 flex"
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 10 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="self-center ml-2">
+                    <Link href="https://www.github.com/sjpsean" target="_blank">
+                      <img
+                        className="rounded-full hover:scale-110"
+                        src="/images/sungjin-park.jpeg"
+                        alt="Sungjin Park"
+                        width={32}
+                        height={32}
+                      />
+                    </Link>
+                  </div>
+                  <div className="self-center ml-2">
+                    <Link href="https://www.github.com/jwlim94" target="_blank">
+                      <img
+                        className="rounded-full hover:scale-110"
+                        src="/images/jongwoo-lim.jpg"
+                        alt="Jongwoo Lim"
+                        width={32}
+                        height={32}
+                      />
+                    </Link>
+                  </div>
+                  <div className="w-12" />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
           {/* LinkedIn */}
-          <div className="relative group">
+          <div
+            className="relative group"
+            onMouseEnter={() => setIsLinkedinHovered(true)}
+            onMouseLeave={() => setIsLinkedinHovered(false)}
+          >
             <img
               className="cursor-pointer relative z-20 hover:scale-110 rounded-lg overflow-hidden"
               src="/images/linkedin-logo.png"
@@ -520,38 +478,48 @@ export default function Home() {
               width={32}
               height={32}
             />
-
-            <div className="justify-around absolute -right-2 -bottom-2 w-40 h-12 bg-gray-100 rounded-lg z-10 hidden group-hover:flex">
-              <div className="self-center ml-2">
-                <Link
-                  href="https://www.linkedin.com/in/sean-j-park/"
-                  target="_blank"
+            {/* AnimatePresence Wrapper for Exit Animation */}
+            <AnimatePresence>
+              {isLinkedinHovered && (
+                <motion.div
+                  className="justify-around absolute -right-2 -bottom-2 w-40 h-12 bg-gray-100 rounded-lg z-10 flex"
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 10 }}
+                  transition={{ duration: 0.2 }}
                 >
-                  <img
-                    className="rounded-full hover:scale-110"
-                    src="/images/sungjin-park.jpeg"
-                    alt="Sungjin Park"
-                    width={32}
-                    height={32}
-                  />
-                </Link>
-              </div>
-              <div className="self-center ml-2">
-                <Link
-                  href="https://www.linkedin.com/in/jwlim94/"
-                  target="_blank"
-                >
-                  <img
-                    className="rounded-full hover:scale-110"
-                    src="/images/jongwoo-lim.jpg"
-                    alt="Jongwoo Lim"
-                    width={32}
-                    height={32}
-                  />
-                </Link>
-              </div>
-              <div className="w-12" />
-            </div>
+                  <div className="self-center ml-2">
+                    <Link
+                      href="https://www.linkedin.com/in/sean-j-park/"
+                      target="_blank"
+                    >
+                      <img
+                        className="rounded-full hover:scale-110"
+                        src="/images/sungjin-park.jpeg"
+                        alt="Sungjin Park"
+                        width={32}
+                        height={32}
+                      />
+                    </Link>
+                  </div>
+                  <div className="self-center ml-2">
+                    <Link
+                      href="https://www.linkedin.com/in/jwlim94/"
+                      target="_blank"
+                    >
+                      <img
+                        className="rounded-full hover:scale-110"
+                        src="/images/jongwoo-lim.jpg"
+                        alt="Jongwoo Lim"
+                        width={32}
+                        height={32}
+                      />
+                    </Link>
+                  </div>
+                  <div className="w-12" />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </div>
