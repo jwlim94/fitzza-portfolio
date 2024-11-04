@@ -3,7 +3,7 @@
 import useMediaQuery from "@/hooks/useMediaQuery";
 import clsx from "clsx";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion, useMotionValue } from "framer-motion";
 import VideoContent from "./components/video_content";
 import NotReadyContent from "./components/not_ready_conetent";
