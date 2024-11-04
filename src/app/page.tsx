@@ -217,10 +217,10 @@ export default function Home() {
     {
       id: "2",
       name: "Register",
-      gif: "/gifs/foo.gif",
+      gif: "https://fitzza-portfolio.vercel.app/gifs/register.gif",
       content: (
         <Image
-          src="/gifs/foo.gif"
+          src="https://fitzza-portfolio.vercel.app/gifs/register.gif"
           alt="Register GIF"
           width={0}
           height={0}
@@ -232,10 +232,10 @@ export default function Home() {
     {
       id: "3",
       name: "Listings",
-      gif: "/gifs/foo.gif",
+      gif: "https://fitzza-portfolio.vercel.app/gifs/listings.gif",
       content: (
         <Image
-          src="/gifs/foo.gif"
+          src="https://fitzza-portfolio.vercel.app/gifs/listings.gif"
           alt="Listings GIF"
           width={0}
           height={0}
@@ -247,10 +247,10 @@ export default function Home() {
     {
       id: "4",
       name: "Neighbor",
-      gif: "/gifs/neighbor.gif",
+      gif: "https://fitzza-portfolio.vercel.app/gifs/neighbor.gif",
       content: (
         <Image
-          src="/gifs/neighbor.gif"
+          src="https://fitzza-portfolio.vercel.app/gifs/neighbor.gif"
           alt="Neighbor GIF"
           width={0}
           height={0}
@@ -262,10 +262,10 @@ export default function Home() {
     {
       id: "5",
       name: "Search",
-      gif: "/gifs/search.gif",
+      gif: "https://fitzza-portfolio.vercel.app/gifs/search.gif",
       content: (
         <Image
-          src="/gifs/search.gif"
+          src="https://fitzza-portfolio.vercel.app/gifs/search.gif"
           alt="Search GIF"
           width={0}
           height={0}
@@ -277,22 +277,25 @@ export default function Home() {
     {
       id: "6",
       name: "Favorite",
-      gif: "https://taskpro-website.vercel.app/_next/static/images/lighbulb-898dc38fcd4319fe9c2e9cf0fe42b5a0.gif",
+      gif: "https://fitzza-portfolio.vercel.app/gifs/favorite.gif",
       content: (
-        <img
-          src="https://taskpro-website.vercel.app/_next/static/images/lighbulb-898dc38fcd4319fe9c2e9cf0fe42b5a0.gif"
-          alt="Favorite GIF"
+        <Image
+          src="https://fitzza-portfolio.vercel.app/gifs/favorite.gif"
+          alt="Search GIF"
+          width={0}
+          height={0}
           className="rounded-lg shadow-lg h-[80vh] w-auto"
+          unoptimized={true}
         />
       ),
     },
     {
       id: "7",
       name: "Chat",
-      gif: "/gifs/foo.gif",
+      gif: "https://fitzza-portfolio.vercel.app/gifs/chat.gif",
       content: (
         <Image
-          src="/gifs/foo.gif"
+          src="https://fitzza-portfolio.vercel.app/gifs/chat.gif"
           alt="Chat GIF"
           width={0}
           height={0}
@@ -304,10 +307,10 @@ export default function Home() {
     {
       id: "8",
       name: "Profile",
-      gif: "/gifs/foo.gif",
+      gif: "https://fitzza-portfolio.vercel.app/gifs/profile.gif",
       content: (
         <Image
-          src="/gifs/foo.gif"
+          src="https://fitzza-portfolio.vercel.app/gifs/profile.gif"
           alt="Profile GIF"
           width={0}
           height={0}
@@ -319,10 +322,10 @@ export default function Home() {
     {
       id: "9",
       name: "Create",
-      gif: "/gifs/foo.gif",
+      gif: "https://fitzza-portfolio.vercel.app/gifs/create.gif",
       content: (
         <Image
-          src="/gifs/foo.gif"
+          src="https://fitzza-portfolio.vercel.app/gifs/create.gif"
           alt="Create GIF"
           width={0}
           height={0}
