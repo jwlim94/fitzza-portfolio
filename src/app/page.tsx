@@ -372,7 +372,7 @@ export default function Home() {
         //   // id={count.toString()}
         // />
         <video
-          src="https://fitzza-portfolio.vercl.app/videos/create.mp4"
+          src="https://fitzza-portfolio.vercel.app/videos/create.mp4"
           // src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
           className="rounded-lg shadow-lg h-[80vh] w-auto"
           muted
