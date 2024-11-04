@@ -18,7 +18,6 @@ export default function Home() {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const [currentIndex, setcurrentIndex] = useState<number | null>(0);
-  const [count, setCount] = useState<number>(0);
 
   // Dummy feature data with placeholder images or text for the GIFs
   const features = [
@@ -204,25 +203,14 @@ export default function Home() {
       id: "1",
       name: "Verify",
       content: (
-        // <Image
-        //   src="https://fitzza-portfolio.vercel.app/gifs/verify.gif"
-        //   alt="Verify GIF"
-        //   width={0}
-        //   height={0}
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        //   unoptimized={true}
-        // />
-        // <img
-        //   src="https://fitzza-portfolio.vercel.app/gifs/verify.gif"
-        //   alt="Verify GIF"
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        // />
         <video
           src="https://fitzza-portfolio.vercel.app/videos/verify.mp4"
-          className="rounded-lg shadow-lg h-[80vh] w-auto"
+          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
           muted
           playsInline
           autoPlay
+          preload="auto"
+          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
         />
       ),
     },
@@ -230,25 +218,14 @@ export default function Home() {
       id: "2",
       name: "Register",
       content: (
-        // <Image
-        //   src="https://fitzza-portfolio.vercel.app/gifs/register.gif"
-        //   alt="Register GIF"
-        //   width={0}
-        //   height={0}
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        //   unoptimized={true}
-        // />
-        // <img
-        //   src="https://fitzza-portfolio.vercel.app/gifs/register.gif"
-        //   alt="Verify GIF"
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        // />
         <video
           src="https://fitzza-portfolio.vercel.app/videos/register.mp4"
-          className="rounded-lg shadow-lg h-[80vh] w-auto"
+          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
           muted
           playsInline
           autoPlay
+          preload="auto"
+          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
         />
       ),
     },
@@ -256,25 +233,14 @@ export default function Home() {
       id: "3",
       name: "Listings",
       content: (
-        // <Image
-        //   src="https://fitzza-portfolio.vercel.app/gifs/listings.gif"
-        //   alt="Listings GIF"
-        //   width={0}
-        //   height={0}
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        //   unoptimized={true}
-        // />
-        // <img
-        //   src="https://fitzza-portfolio.vercel.app/gifs/listings.gif"
-        //   alt="Verify GIF"
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        // />
         <video
           src="https://fitzza-portfolio.vercel.app/videos/listings.mp4"
-          className="rounded-lg shadow-lg h-[80vh] w-auto"
+          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
           muted
           playsInline
           autoPlay
+          preload="auto"
+          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
         />
       ),
     },
@@ -282,25 +248,14 @@ export default function Home() {
       id: "4",
       name: "Neighbor",
       content: (
-        // <Image
-        //   src="https://fitzza-portfolio.vercel.app/gifs/neighbor.gif"
-        //   alt="Neighbor GIF"
-        //   width={0}
-        //   height={0}
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        //   unoptimized={true}
-        // />
-        // <img
-        //   src="https://fitzza-portfolio.vercel.app/gifs/neighbor.gif"
-        //   alt="Verify GIF"
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        // />
         <video
           src="https://fitzza-portfolio.vercel.app/videos/neighbor.mp4"
-          className="rounded-lg shadow-lg h-[80vh] w-auto"
+          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
           muted
           playsInline
           autoPlay
+          preload="auto"
+          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
         />
       ),
     },
@@ -308,25 +263,14 @@ export default function Home() {
       id: "5",
       name: "Search",
       content: (
-        // <Image
-        //   src="https://fitzza-portfolio.vercel.app/gifs/search.gif"
-        //   alt="Search GIF"
-        //   width={0}
-        //   height={0}
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        //   unoptimized={true}
-        // />
-        // <img
-        //   src="https://fitzza-portfolio.vercel.app/gifs/search.gif"
-        //   alt="Verify GIF"
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        // />
         <video
           src="https://fitzza-portfolio.vercel.app/videos/search.mp4"
-          className="rounded-lg shadow-lg h-[80vh] w-auto"
+          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
           muted
           playsInline
           autoPlay
+          preload="auto"
+          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
         />
       ),
     },
@@ -334,25 +278,14 @@ export default function Home() {
       id: "6",
       name: "Favorite",
       content: (
-        // <Image
-        //   src="https://fitzza-portfolio.vercel.app/gifs/favorite.gif"
-        //   alt="Search GIF"
-        //   width={0}
-        //   height={0}
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        //   unoptimized={true}
-        // />
-        // <img
-        //   src="https://fitzza-portfolio.vercel.app/gifs/favorite.gif"
-        //   alt="Verify GIF"
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        // />
         <video
           src="https://fitzza-portfolio.vercel.app/videos/favorite.mp4"
-          className="rounded-lg shadow-lg h-[80vh] w-auto"
+          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
           muted
           playsInline
           autoPlay
+          preload="auto"
+          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
         />
       ),
     },
@@ -360,25 +293,14 @@ export default function Home() {
       id: "7",
       name: "Chat",
       content: (
-        // <Image
-        //   src="https://fitzza-portfolio.vercel.app/gifs/chat.gif"
-        //   alt="Chat GIF"
-        //   width={0}
-        //   height={0}
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        //   unoptimized={true}
-        // />
-        // <img
-        //   src="https://fitzza-portfolio.vercel.app/gifs/chat.gif"
-        //   alt="Verify GIF"
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        // />
         <video
           src="https://fitzza-portfolio.vercel.app/videos/chat.mp4"
-          className="rounded-lg shadow-lg h-[80vh] w-auto"
+          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
           muted
           playsInline
           autoPlay
+          preload="auto"
+          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
         />
       ),
     },
@@ -386,26 +308,14 @@ export default function Home() {
       id: "8",
       name: "Profile",
       content: (
-        // <Image
-        //   src="https://fitzza-portfolio.vercel.app/gifs/profile.gif"
-        //   alt="Profile GIF"
-        //   width={0}
-        //   height={0}
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        //   unoptimized={true}
-        // />
-        // <img
-        //   src="https://fitzza-portfolio.vercel.app/gifs/profile.gif"
-        //   alt="Verify GIF"
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        //   id={count.toString()}
-        // />
         <video
           src="https://fitzza-portfolio.vercel.app/videos/profile.mp4"
-          className="rounded-lg shadow-lg h-[80vh] w-auto"
+          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
           muted
           playsInline
           autoPlay
+          preload="auto"
+          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
         />
       ),
     },
@@ -413,26 +323,14 @@ export default function Home() {
       id: "9",
       name: "Create",
       content: (
-        // <Image
-        //   src="https://fitzza-portfolio.vercel.app/gifs/create.gif"
-        //   alt="Create GIF"
-        //   width={0}
-        //   height={0}
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        //   unoptimized={true}
-        // />
-        // <img
-        //   src="https://fitzza-portfolio.vercel.app/gifs/create.gif"
-        //   alt="Verify GIF"
-        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
-        //   // id={count.toString()}
-        // />
         <video
           src="https://fitzza-portfolio.vercel.app/videos/create.mp4"
-          className="rounded-lg shadow-lg h-[80vh] w-auto"
+          className="rounded-3xl shadow-lg h-[80vh] w-auto aspect-[332/720]"
           muted
           playsInline
           autoPlay
+          preload="auto"
+          poster="https://fitzza-portfolio.vercel.app/images/loading.png"
         />
       ),
     },
@@ -446,7 +344,7 @@ export default function Home() {
           alt="Not Ready"
           width={200}
           height={200}
-          className="rounded-lg shadow-lg h-[30vh] w-auto"
+          className="rounded-lg h-[30vh] w-auto"
         />
       ),
     },
@@ -460,7 +358,7 @@ export default function Home() {
           alt="Not Ready"
           width={200}
           height={200}
-          className="rounded-lg shadow-lg h-[30vh] w-auto"
+          className="rounded-lg h-[30vh] w-auto"
         />
       ),
     },
@@ -474,7 +372,7 @@ export default function Home() {
           alt="Not Ready"
           width={200}
           height={200}
-          className="rounded-lg shadow-lg h-[30vh] w-auto"
+          className="rounded-lg h-[30vh] w-auto"
         />
       ),
     },
@@ -533,7 +431,6 @@ export default function Home() {
                 onMouseLeave={() => {
                   setHoveredFeature(null);
                   setcurrentIndex(null);
-                  setCount(count + 1);
                 }}
               >
                 {/* Background circle on hover */}
@@ -557,17 +454,6 @@ export default function Home() {
         {/* GIF Display Area */}
         <div className="flex items-center justify-center w-1/2 gap-y-2">
           {hoveredFeature ? (
-            // <Image
-            //   src={
-            //     features.find((feature) => feature.id === hoveredFeature)
-            //       ?.gif || ""
-            //   }
-            //   alt="Feature GIF"
-            //   width={340}
-            //   height={340}
-            //   className="rounded-lg shadow-lg"
-            //   unoptimized={true}
-            // />
             features[currentIndex!].content
           ) : (
             <Image
