@@ -305,7 +305,7 @@ export default function Home() {
       {...swipeHandlers}
       className="flex flex-col w-[100vw] h-[100dvh] overflow-hidden relative"
     >
-      <div className="flex justify-center items-center h-[16dvh]">
+      <div className="flex justify-center items-center mt-[4dvh]">
         <motion.div
           key={currentIndex}
           className="text-xl font-medium text-black"
@@ -316,7 +316,7 @@ export default function Home() {
           {features[currentIndex].name}
         </motion.div>
       </div>
-      <div className="flex h-full items-start justify-center">
+      <div className="flex h-full items-center justify-center">
         {currentIndex !== 0 ? (
           <div
             className="cursor-pointer flex-grow text-xl h-full"
@@ -330,7 +330,7 @@ export default function Home() {
         )}
         <motion.div
           key={currentIndex} // unique key to reset animation
-          className="flex flex-grow items-center justify-center"
+          className="flex items-center justify-center"
           drag
           dragConstraints={{
             top: 0,
@@ -377,7 +377,7 @@ export default function Home() {
 
       {/* Linear Progress Indicator Bar */}
       {currentIndex !== 0 && (
-        <div className="w-full h-4 bg-gray-300">
+        <div className="absolute w-full bottom-0 h-2 bg-gray-300">
           <motion.div
             className="h-full bg-[#0090FF]"
             style={{ width: `${(currentIndex / 12) * 100}%` }}
