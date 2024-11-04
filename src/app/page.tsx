@@ -17,7 +17,7 @@ export default function Home() {
   );
   const isMobile = useMediaQuery("(max-width: 768px)");
 
-  const [currentIndex, setcurrentIndex] = useState<number>(0);
+  const [currentIndex, setcurrentIndex] = useState<number | null>(0);
 
   // Dummy feature data with placeholder images or text for the GIFs
   const features = [
@@ -383,7 +383,7 @@ export default function Home() {
             className="cursor-pointer text-xl p-6"
             onClick={() => {
               if (currentIndex === 0) return;
-              setcurrentIndex(currentIndex - 1);
+              setcurrentIndex(currentIndex! - 1);
             }}
           >
             ◀︎
@@ -391,13 +391,13 @@ export default function Home() {
         ) : (
           <div className="p-6" />
         )}
-        <div className="text-xl">{features[currentIndex].name}</div>
+        <div className="text-xl">{features[currentIndex!].name}</div>
         {currentIndex !== features.length - 1 ? (
           <div
             className="cursor-pointer text-xl p-6"
             onClick={() => {
               if (currentIndex === features.length - 1) return;
-              setcurrentIndex(currentIndex + 1);
+              setcurrentIndex(currentIndex! + 1);
             }}
           >
             ▶︎
@@ -407,7 +407,7 @@ export default function Home() {
         )}
       </div>
       <div className="flex flex-grow items-center justify-center mb-12">
-        {features[currentIndex].content}
+        {features[currentIndex!].content}
       </div>
     </div>
   ) : (
@@ -423,8 +423,12 @@ export default function Home() {
                 className="relative h-12 flex cursor-pointer items-center"
                 onMouseEnter={() => {
                   setHoveredFeature(feature.id);
+                  setcurrentIndex(parseInt(feature.id));
                 }}
-                onMouseLeave={() => setHoveredFeature(null)}
+                onMouseLeave={() => {
+                  setHoveredFeature(null);
+                  setcurrentIndex(null);
+                }}
               >
                 {/* Background circle on hover */}
                 {hoveredFeature === feature.id && (
@@ -447,18 +451,18 @@ export default function Home() {
         {/* GIF Display Area */}
         <div className="flex items-center justify-center w-1/2">
           {hoveredFeature ? (
-            <Image
-              // src={
-              //   features.find((feature) => feature.id === hoveredFeature)
-              //     ?.gif || ""
-              // }
-              src="/gifs/foo.gif"
-              alt="Feature GIF"
-              width={340}
-              height={340}
-              className="rounded-lg shadow-lg"
-              unoptimized={true}
-            />
+            // <Image
+            //   src={
+            //     features.find((feature) => feature.id === hoveredFeature)
+            //       ?.gif || ""
+            //   }
+            //   alt="Feature GIF"
+            //   width={340}
+            //   height={340}
+            //   className="rounded-lg shadow-lg"
+            //   unoptimized={true}
+            // />
+            features[currentIndex!].content
           ) : (
             <Image
               src="/images/default.png"
