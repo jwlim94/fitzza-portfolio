@@ -18,6 +18,7 @@ export default function Home() {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const [currentIndex, setcurrentIndex] = useState<number | null>(0);
+  const [count, setCount] = useState<number>(0);
 
   // Dummy feature data with placeholder images or text for the GIFs
   const features = [
@@ -348,6 +349,7 @@ export default function Home() {
           src="https://fitzza-portfolio.vercel.app/gifs/profile.gif"
           alt="Verify GIF"
           className="rounded-lg shadow-lg h-[80vh] w-auto"
+          id={count.toString()}
         />
       ),
     },
@@ -363,10 +365,19 @@ export default function Home() {
         //   className="rounded-lg shadow-lg h-[80vh] w-auto"
         //   unoptimized={true}
         // />
-        <img
-          src="https://fitzza-portfolio.vercel.app/gifs/create.gif"
-          alt="Verify GIF"
+        // <img
+        //   src="https://fitzza-portfolio.vercel.app/gifs/create.gif"
+        //   alt="Verify GIF"
+        //   className="rounded-lg shadow-lg h-[80vh] w-auto"
+        //   // id={count.toString()}
+        // />
+        <video
+          src="https://fitzza-portfolio.vercl.app/videos/create.mp4"
+          // src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
           className="rounded-lg shadow-lg h-[80vh] w-auto"
+          muted
+          playsInline
+          autoPlay
         />
       ),
     },
@@ -453,13 +464,13 @@ export default function Home() {
     <div className="flex min-h-screen p-10">
       <div className="flex relative w-full justify-center items-center">
         {/* Feature List */}
-        <div className="grid w-32">
+        <div className="grid w-32 gap-y-2">
           {features
             .filter((feature) => feature.id !== "0")
             .map((feature) => (
               <div
                 key={feature.id}
-                className="relative h-12 flex cursor-pointer items-center"
+                className="relative h-10 flex cursor-pointer items-center"
                 onMouseEnter={() => {
                   setHoveredFeature(feature.id);
                   setcurrentIndex(parseInt(feature.id));
@@ -467,12 +478,13 @@ export default function Home() {
                 onMouseLeave={() => {
                   setHoveredFeature(null);
                   setcurrentIndex(null);
+                  setCount(count + 1);
                 }}
               >
                 {/* Background circle on hover */}
                 {hoveredFeature === feature.id && (
                   <div className="absolute flex items-center -left-4">
-                    <div className="w-32 h-8 bg-white rounded-full shadow-lg"></div>
+                    <div className="w-32 h-10 bg-white rounded-full shadow-lg"></div>
                   </div>
                 )}
                 <span
@@ -488,7 +500,7 @@ export default function Home() {
         </div>
 
         {/* GIF Display Area */}
-        <div className="flex items-center justify-center w-1/2">
+        <div className="flex items-center justify-center w-1/2 gap-y-2">
           {hoveredFeature ? (
             // <Image
             //   src={
