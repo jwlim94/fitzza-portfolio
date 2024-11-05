@@ -8,6 +8,8 @@ import { AnimatePresence, motion, useMotionValue } from "framer-motion";
 import VideoContent from "./components/video_content";
 import NotReadyContent from "./components/not_ready_conetent";
 import { useSwipeable } from "react-swipeable";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAnglesLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const [isInstagramClicked, setIsInstagramClicked] = useState<boolean>(false);
@@ -21,7 +23,7 @@ export default function Home() {
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const text = "Swipe to explore!".split("");
+  const text = "Swipe to explore!".split(/( )/);
 
   const features = [
     {
@@ -356,7 +358,22 @@ export default function Home() {
 
       {/* Swipe to Explore! */}
       {currentIndex === 0 && (
-        <div className="absolute bottom-[8dvh] left-0 right-0 text-xl text-center">
+        <div className="absolute bottom-[8dvh] left-0 right-0 text-xl flex justify-center">
+          {/* Animated Icon */}
+          <motion.div
+            initial={{ color: "#FF3D00" }}
+            animate={{ color: "#0090FF" }}
+            transition={{
+              duration: 1,
+              repeat: Infinity,
+              repeatDelay: 0.2,
+            }}
+            className="mr-4"
+          >
+            <FontAwesomeIcon icon={faAnglesLeft} style={{ fontSize: "20px" }} />
+          </motion.div>
+
+          {/* Animated Text */}
           {text.map((el, i) => (
             <motion.span
               key={i}
@@ -369,7 +386,7 @@ export default function Home() {
                 repeatDelay: 0.2,
               }}
             >
-              {el}
+              {el === " " ? "\u00A0" : el}
             </motion.span>
           ))}
         </div>
