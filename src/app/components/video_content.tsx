@@ -14,7 +14,7 @@ export default function VideoContent({ name, isMobile }: VideoContentProps) {
       transition={{ duration: 0.5 }}
     >
       <video
-        src={`https://storage.googleapis.com/fitzza/${name}.m4v`}
+        src={`https://fitzza-portfolio.vercel.app/videos/${name}.m4v`}
         className={clsx(
           "rounded-3xl shadow-card w-auto aspect-[332/720] object-cover",
           isMobile ? "h-[70vh]" : "h-[80vh]"
