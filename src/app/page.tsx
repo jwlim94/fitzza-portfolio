@@ -311,7 +311,7 @@ export default function Home() {
         {/* Home Icon */}
         {currentIndex !== 0 && (
           <motion.button
-            className="absolute left-[4dvh] text-black text-2xl"
+            className="absolute right-[4dvh] text-black text-2xl"
             aria-label="Home"
             onClick={() => setCurrentIndex(0)}
             whileHover={{
