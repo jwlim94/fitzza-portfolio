@@ -9,7 +9,7 @@ import VideoContent from "./components/video_content";
 import NotReadyContent from "./components/not_ready_conetent";
 import { useSwipeable } from "react-swipeable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAnglesLeft } from "@fortawesome/free-solid-svg-icons";
+import { faAnglesLeft, faHome } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const [isInstagramClicked, setIsInstagramClicked] = useState<boolean>(false);
@@ -308,6 +308,26 @@ export default function Home() {
       className="flex flex-col w-[100vw] h-[100dvh] overflow-hidden relative"
     >
       <div className="flex justify-center items-center mt-[4dvh]">
+        {/* Home Icon */}
+        {currentIndex !== 0 && (
+          <motion.button
+            className="absolute left-[4dvh] text-black text-2xl"
+            aria-label="Home"
+            onClick={() => setCurrentIndex(0)}
+            whileHover={{
+              scale: 1.05,
+              color: "#0090FF",
+            }}
+            whileTap={{
+              scale: 1.05,
+              color: "#0090FF",
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            <FontAwesomeIcon icon={faHome} style={{ fontSize: "20px" }} />
+          </motion.button>
+        )}
+
         <motion.div
           key={currentIndex}
           className="text-xl font-medium text-black"
